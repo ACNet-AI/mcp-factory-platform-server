@@ -1,0 +1,28 @@
+auth:
+  provider: none
+components:
+  auto_discovery:
+    enabled: true
+    ignore_patterns:
+    - __pycache__
+    - '*.pyc'
+    - __init__.py
+    scan_directories:
+    - tools
+    - resources
+    - prompts
+  prompts: []
+  resources: []
+  tools: []
+management:
+  expose_management_tools: true
+mcpServers: {}
+middleware: []
+server:
+  instructions: This is mcp-factory-platform-server - MCP Factory平台管理服务器 - 用户注册、服务器创建、账户管理
+  name: mcp-factory-platform-server
+transport:
+  host: localhost
+  log_level: INFO
+  port: 8000
+  transport: stdio
