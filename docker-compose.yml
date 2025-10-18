@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mcp-factory-platform-server:
+    build: .
+    container_name: mcp-factory-platform-server
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    restart: unless-stopped
+    # For HTTP adapter, expose port
+    # ports:
+    #   - "8000:8000"
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
+

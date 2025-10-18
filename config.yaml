@@ -15,11 +15,16 @@ components:
   resources: []
   tools: []
 management:
-  expose_management_tools: true
-mcpServers: {}
+  expose_management_tools: false
+mcpServers:
+  mcp-factory-server:
+    command: "uv"
+    args: ["run", "python", "server.py"]
+    cwd: "/Users/guyue/mcp-factory/workspace/projects/mcp-factory-server"
+    auto_start: true
 middleware: []
 server:
-  instructions: This is mcp-factory-platform-server - MCP Factory平台管理服务器 - 用户注册、服务器创建、账户管理
+  instructions: This is mcp-factory-platform-server - MCP Factory Platform Management Server - User registration, server creation, and account management
   name: mcp-factory-platform-server
 transport:
   host: localhost
